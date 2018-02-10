@@ -28,5 +28,16 @@ describe("this is the f-ill-tər function it should pass an array, check for a b
         expect(result).toEqual(expect.arrayContaining(expected));
     })
 })
-// This made me switch my tobe to toEqual, why?//
 
+
+describe("This reduce function will apply a callback against an accumulator and every element in the array to reduce it to a single value", ()=>{
+    it("[23,26,78,2,4,8,16] should reduce to '157'", () => {
+        let arr = [23,26,78,2,4,8,16];
+        let initialValue = 0;
+        let reducer = (accumulator, currentValue) => accumulator + currentValue;
+        let cb = reducer;
+        let result = Fp.ixReduce(arr,cb,initialValue);
+        let expected = 157;
+        expect(result).toBe(expected);
+    })
+})
