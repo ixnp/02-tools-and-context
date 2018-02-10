@@ -9,7 +9,7 @@ describe("this is the map function it should return an array with double the val
         let cb = double;
         let result = Fp.ixMap(arr,cb);
         let expected = [46, 52, 156, 4, 8, 16, 32];
-        expect(result).toEqual(expected);
+        expect(result).toEqual(expect.arrayContaining(expected));
     })
 })
 
@@ -25,7 +25,7 @@ describe("this is the f-ill-tər function it should pass an array, check for a b
         let cb = isStr;
         let result = Fp.ixFilter(arr,cb);
         let expected = ['f','-','illlll','ter','-mpj funfunfunction'];
-        expect(result).toBe(expected);
+        expect(result).toEqual(expect.arrayContaining(expected));
     })
 })
 // This made me switch my tobe to toEqual, why?//
