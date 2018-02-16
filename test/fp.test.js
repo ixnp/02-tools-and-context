@@ -46,8 +46,8 @@ describe("This reduce function will apply a callback against an accumulator and 
     it("[23,26,78,2,4,8,16] should reduce to '157'", () => {
         let arr = [23,26,78,2,4,8,16];
         let initialValue = 0;
-        let reducer = (accumulator, currentValue) => accumulator + currentValue;
-        let cb = reducer;
+        let testCall = (accumulator, currentValue) => accumulator + currentValue;
+        let cb = testCall;
         let result = Fp.ixReduce(arr,cb,initialValue);
         let expected = 157;
         expect(result).toBe(expected);
