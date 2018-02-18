@@ -1,7 +1,6 @@
-# User defined
-.DS_Store
-*.diff
+# Created by https://www.gitignore.io/api/node
 
+### Node ###
 # Logs
 logs
 *.log
@@ -33,7 +32,7 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
+# Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
 # Dependency directories
@@ -60,3 +59,7 @@ typings/
 
 # dotenv environment variables file
 .env
+
+
+
+# End of https://www.gitignore.io/api/node
