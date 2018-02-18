@@ -2,6 +2,17 @@
 const Fp = require ('../lib/fp.js').Fp;
 
 
+describe("this is the for function it should apply a callback on every item in the array", ()=>{
+    it("should pass each item into the callback", () =>{
+        let counter = 0;
+        let testArr = [1,2,3,4,5];
+        Fp.ixforEach(testArr,(item, index,arr) => {
+            expect(item).toEqual(testArr[counter++])
+        })
+    })
+})
+
+
 describe("this is the map function it should return an array with double the value of each item in the array.", ()=>{
     it("should add one to each int in the array", () =>{
         let arr = [23,26,78,2,4,8,16];
@@ -34,8 +45,8 @@ describe("This reduce function will apply a callback against an accumulator and 
     it("[23,26,78,2,4,8,16] should reduce to '157'", () => {
         let arr = [23,26,78,2,4,8,16];
         let initialValue = 0;
-        let reducer = (accumulator, currentValue) => accumulator + currentValue;
-        let cb = reducer;
+        let testCall = (accumulator, currentValue) => accumulator + currentValue;
+        let cb = testCall;
         let result = Fp.ixReduce(arr,cb,initialValue);
         let expected = 157;
         expect(result).toBe(expected);
