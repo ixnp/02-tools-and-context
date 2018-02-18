@@ -3,13 +3,12 @@ const Fp = require ('../lib/fp.js').Fp;
 
 
 describe("this is the for function it should apply a callback on every item in the array", ()=>{
-    it("should add one to each int in the array", () =>{
-        let arr = [23,26,78,2,4,8,16];
-        let double = (n) => {return 2*n};
-        let cb = double;
-        let result = Fp.ixforEach(arr,cb);
-        let expected = [46, 52, 156, 4, 8, 16, 32];
-        expect(result).toEqual(expect.arrayContaining(expected));
+    it("should pass each item into the callback", () =>{
+        let counter = 0;
+        let testArr = [1,2,3,4,5];
+        Fp.ixforEach(testArr,(item, index,arr) => {
+            expect(item).toEqual(testArr[counter++])
+        })
     })
 })
 
